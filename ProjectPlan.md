@@ -78,7 +78,7 @@ Use **TMDb API** as the primary source because it provides season, episode, and 
 ### Styling
 
 - Team choice
-- Material UI is recommended
+- Material UI or shadcn/ui is recommended
 
 ### Deployment
 
