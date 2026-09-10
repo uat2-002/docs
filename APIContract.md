@@ -169,3 +169,100 @@
   - 401: Unauthorized
   - 404: Not Found
   - 500: Internal server error
+
+## User status
+
+### **Endpoint: /user/series**
+
+- Method: GET
+- Headers:
+  - Authorization: Bearer `<accessToken>`
+- Request Body:None
+- Success Response:
+
+```json
+[
+  {
+    "userSeriesId": "user1",
+    "userId": "123",
+    "seriesId": "series456",
+    "userStatus": "watching",
+    "dateAdded": "2026-01-02T12:00:00Z",
+    "series": {
+      "tmdbId": 1,
+      "title": "The Incredibles",
+      "poster": "/2LqaLgk4Z226KkgPJuiOQ58wvrm.jpg",
+      "status": "ended",
+      "seasonsCount": 3
+    }
+  }
+]
+```
+
+- Error Codes:
+  - 401: Unauthorized
+  - 500: Internal server error
+
+### **Endpoint: /user/series**
+
+- Method: POST
+- Headers:
+  - Content-Type: application/json
+  - Authorization: Bearer `<accessToken>`
+- Request Body:
+
+```json
+{
+  "tmdbId": 1
+}
+```
+
+- Success Response:
+
+```json
+{
+  "userSeriesId": "user1",
+  "message": "series was added successfully"
+}
+```
+
+- Error Codes:
+  - 400: Bad Request
+  - 401: Unauthorized
+  - 500: Internal server error
+
+### **Endpoint: /user/series/:userSeriesId**
+
+- Method: PATCH
+- Headers:
+  - Content-Type: application/json
+  - Authorization: Bearer `<accessToken>`
+- URL Params
+  - userSeriesId(string)
+- Request Body:
+
+```json
+{
+  "userStatus": "watching"
+}
+```
+
+- User Watch Status:
+  - plan_to_watch
+  - watching
+  - watched
+  - not_worth_it
+
+- Success Response:
+
+```json
+{
+  "message": "series was updated successfully"
+}
+```
+
+- Error Codes:
+  - 400: Bad Request
+  - 401: Unauthorized
+  - 404: Not Found
+  - 500: Internal server error
