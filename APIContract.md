@@ -58,8 +58,8 @@
 ```
 
 - Error Codes:
-  - 400 Bad Request
-  - 401 Unauthorized
+  - 400: Bad Request
+  - 401: Unauthorized
   - 500: Internal server error
 
 ### **Endpoint: /me**
@@ -119,8 +119,7 @@
       "title": "The Incredibles",
       "poster": "/2LqaLgk4Z226KkgPJuiOQ58wvrm.jpg",
       "releaseDate": "2004-10-27",
-      "genres": ["drama"],
-      "status": "ended"
+      "genreIds": [18, 80]
     }
   ]
 }
@@ -147,19 +146,18 @@
   "title": "The Incredibles",
   "overview": "Bob Parr has given up his superhero days to log in time as an insurance adjuster and raise his three children with his formerly heroic wife in suburbia. But when he receives a mysterious assignment, it's time to get back into costume.",
   "releaseDate": "2004-10-27",
-  "genres": ["drama"],
+  "genres": [
+    { "id": 10765, "name": "Sci-Fi & Fantasy" },
+    { "id": 18, "name": "Drama" }
+  ],
   "poster": "/2LqaLgk4Z226KkgPJuiOQ58wvrm.jpg",
   "status": "ended",
+  "nextEpisodeToAir": null,
+  "inProduction": false,
   "seasons": [
     {
       "seasonNumber": 1,
-      "episodes": [
-        {
-          "episodeId": 1,
-          "episodeNumber": 1,
-          "title": "Pilot"
-        }
-      ]
+      "episodeCount": 272
     }
   ]
 }
